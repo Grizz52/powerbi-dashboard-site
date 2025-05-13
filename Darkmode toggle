@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power BI Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header, .footer, nav {
+            background-color: #0078D7;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h2, h3 {
+            text-align: center;
+            color: #0078D7;
+        }
+
+        .dashboard {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .footer {
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        button.toggle {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            border: none;
+            background: #0078D7;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* Dark Mode Styling */
+        .dark-mode {
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+        }
+
+        .dark-mode .container {
+            background-color: #2c2c2c;
+        }
+
+        .dark-mode header,
+        .dark-mode nav,
+        .dark-mode .footer {
+            background-color: #444;
+            color: white;
+        }
+
+        .dark-mode h1,
+        .dark-mode h2,
+        .dark-mode h3,
+        .dark-mode h4,
+        .dark-mode h5,
+        .dark-mode h6,
+        .dark-mode p,
+        .dark-mode label {
+            color: #f4f4f4;
+        }
+
+        .dark-mode input,
+        .dark-mode textarea {
+            background-color: #333;
+            color: #f4f4f4;
+            border: 1px solid #888;
+        }
+
+        .dark-mode button {
+            background-color: #555;
+            color: white;
+        }
+
+        .dark-mode div[style*="background: #f9f9f9"] {
+            background-color: #333 !important;
+            color: #f4f4f4 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        Power BI Dashboard - Secure Data Insights
+    </header>
+
+    <nav>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="toggle" onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+    <div class="container">
+        <h2>Welcome to Our Power BI Dashboard</h2>
+        <p>Our interactive dashboard provides real-time data insights, helping you make informed business decisions. Authorized users can access detailed analytics securely.</p>
+
+        <div class="dashboard" id="dashboard">
+            <h3>Live Dashboard</h3>
+            <div id="loading">Loading dashboard...</div>
+            <iframe 
+                onload="document.getElementById('loading').style.display='none'" 
+                src="https://app.powerbi.com/reportEmbed?reportId=4e3420d8-5725-401e-869a-4b645bed9f01&autoAuth=true&ctid=d49ab9ea-99ec-4552-8651-bd94f79aa5e5" 
+                allowfullscreen="true">
+            </iframe>
+        </div>
+    </div>
+
+    <section id="about" class="container">
+        <h3>About This Dashboard</h3>
+        <p>This research examines the potential consequences of the Trump administration’s decision to pause federal financial assistance to Historically Black Colleges and Universities (HBCUs). It analyzes the effects of this pause on various forms of aid, including grants, loans, and institutional support, with a particular focus on the financial stability of HBCU students who heavily rely on federal aid. Given that many undergraduates at HBCUs depend on such funding, this study aims to provide timely, accessible, and data-driven insights to inform policy discussions and support institutional planning.
+
+        The Power BI dashboard is designed to assist non-technical users in analyzing key metrics related to business operations, emphasizing real-time visualization of patterns and trends. It enables teams to make data-informed decisions using secure and interactive visual tools.</p>
+    </section>
+
+    <section class="container">
+        <h3>Meet the Team</h3>
+        <div style="display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px;">
+
+            <!-- Ogechi Onyekwere -->
+            <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4 style="color: #0078D7;">Ogechi Onyekwere</h4>
+                <p><strong>Role:</strong> Research & Integration</p>
+                <p><strong>Task:</strong> Research - relevant data to be used to develop trends. Integrate - and connect the dashboard to website</p>
+            </div>
+
+            <!-- Miles Griswold -->
+            <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4 style="color: #0078D7;">Miles Griswold</h4>
+                <p><strong>Role:</strong> UI/UX & Website Enhancements</p>
+                <p><strong>Focus:</strong> Improving UI/UX design and enhancing the website by improving responsiveness and user experience</p>
+            </div>
+
+            <!-- Jordan Bertrand -->
+            <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4 style="color: #0078D7;">Jordan Bertrand</h4>
+                <p><strong>Role:</strong> Security & Authentication</p>
+                <p><strong>Task:</strong> Implement security controls (authorization & authentication) using Microsoft authentication</p>
+            </div>
+
+            <!-- Anna Afoakwah & Taj Smith -->
+            <div style="flex: 1 1 300px; background: #f9f9f9; border-radius: 10px; padding: 15px; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+                <h4 style="color: #0078D7;">Anna Afoakwah & Taj Smith</h4>
+                <p><strong>Role:</strong> Backend & Deployment</p>
+                <p><strong>Task:</strong> Create and develop a Power BI Dashboard to help non-technical users understand data, then deploy it to a GitHub website</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h3>Contact Us</h3>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" style="width: 100%; padding: 8px;"><br><br>
+
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" style="width: 100%; padding: 8px;"></textarea><br><br>
+
+            <button type="submit" style="padding: 10px 20px; background-color: #0078D7; color: white; border: none; border-radius: 4px;">Send</button>
+        </form>
+    </section>
+
+    <div class="footer">
+        © 2025 Data Insights Team | Secure & Interactive Power BI Analytics
+    </div>
+
+    <script>
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+    </script>
+
+</body>
+</html>
